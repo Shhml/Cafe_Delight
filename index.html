@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Café Delight</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="preload" href="main.css" as="style">
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css"/>
+</head>
+<body>
+<div id="branded-loader">
+  <img src="images/logo.png" width="80" alt="Café Delight">
+  <h2>Café Delight</h2>
+  <div class="dot-flash"></div>
+</div>
+
+<style>
+#branded-loader{
+  position:fixed; inset:0; z-index:9999;
+  background:#1c1c1c; color:#fff;
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center;
+  gap:.75rem;
+}
+.dot-flash{ width:60px; height:4px; background:#b9925d; animation:flash 1.2s infinite; }
+@keyframes flash{
+  0%,100%{opacity:.2;} 50%{opacity:1;}
+}
+</style>
+
+<script>
+window.addEventListener('load', () => {
+  const loader = document.getElementById('branded-loader');
+  loader.style.opacity='0';
+  loader.style.transition='opacity .6s';
+  setTimeout(()=>loader.remove(),600);
+});
+</script>
+  
+
+<!--  MOBILE  BOTTOM  NAV  (only shows ≤ 480 px) -->
+<nav id="mobile-nav" class="mobile-bottom-nav">
+  <a href="#hero"><i class="fas fa-home"></i><span>Home</span></a>
+  <a href="#services"><i class="fas fa-concierge-bell"></i><span>Services</span></a>
+  <a href="#about"><i class="fas fa-info-circle"></i><span>About</span></a>
+  <a href="#footer-column"><i class="fas fa-phone"></i><span>Contact</span></a>
+</nav>
+
+<!-- Navigation -->
+<nav class="navbar" id="navbar">
+  <!-- Left: Logo -->
+  <div class="logo">
+    <img src="images/logo.png" alt="Cafe Logo" />
+    <span>Café Delight</span>
+  </div>
+
+  <!-- Center: Navigation links -->
+  <ul class="nav-links">
+    <li><a href="#hero">HOME</a></li>
+    <li><a href="#services">SERVICES</a></li>
+    <li><a href="#about">ABOUT</a></li>
+    <li><a href="#footer-column">CONTACT</a></li>
+  </ul>
+
+
+ 
+  <!-- Right Icons -->
+  <div class="nav-icons">
+   
+  </div>
+</nav>
+
+<!-- Search Box with Suggestions -->
+<div class="search-box" id="search-box">
+  <input type="text" id="search-input" placeholder="Search menu..." />
+  <ul id="search-results"></ul>
+</div>
+
+
+<!-- Hidden Mini Cart -->
+<div class="cart-panel" id="cart-panel">
+  <p>Your cart is empty.</p>
+</div>
+<!-- Add this in your <head> to load icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+
+
+
+<!-- Hero Section -->
+<header class="hero" id ="home">
+  <div class="hero-content" data-aos="fade-up">
+    <h1>Fuel Your Day with Flavor</h1>
+    <p>Cozy Up with Every Sip</p>
+    <div class="hero-buttons">
+      <a href="#menu" class="btn primary">Explore Menu</a>
+      <a href="#contact" class="btn secondary">Contact Us</a>
+    </div>
+  </div>
+</header>
+
+<!-- Parallax Highlight Section -->
+<section class="parallax-highlight">
+  <div class="highlight-content" data-aos="fade-up">
+    <h2 class="highlight-heading">
+      <span class="highlight-white">Why</span><br />
+      <span class="highlight-Script">Café Delight</span>    </h2>
+  </div>
+</section>
+
+<!-- Coffee Section -->
+  
+<section class="coffee-section">
+  <div class="coffee-content">
+    <!-- Left Images -->
+    <div class="coffee-images">
+      <!-- Main Image -->
+      <img src="images/pg2.jpg" class="main-img" alt="Coffee Beans" data-aos="fade-right" data-aos-delay="100">
+      <!-- Overlay Image -->
+      <img src="images/pg4.jpg" class="overlay-img" alt="Latte Art" data-aos="fade-right" data-aos-delay="300">
+    </div>
+
+    <!-- Right Text -->
+    <div class="coffee-text" data-aos="fade-left" data-aos-delay="500">
+      <h1>Providing unique coffee experiences</h1>
+      <hr class="decor-line" />
+      <h3>We believe this is the best coffee in world. Try it for yourself</h3>
+      <p>Our roasts feature multiple underlying notes. We believe the unexpected can happen when good design and great coffee come together. We also believe there is an outside in all of us to be found.</p>
+      <button class="shop-btn">Visit Shop</button>
+    </div>
+  </div>
+</section>
+
+
+<!-- Parallax Spotlight Section -->
+<section class="parallax-spotlight">
+  <div class="spotlight-content" data-aos="fade-up">
+    <h2 class="spotlight-heading">
+      <span class="spotlight-white">What Makes</span><br />
+      <span class="spotlight-script">Us Unique</span>
+    </h2>
+  </div>
+</section>
+
+
+<!-- Coffee Section with Reverse Layout -->
+<section class="coffee-section reverse">
+  <div class="coffee-content">
+    <!-- Left Images -->
+    <div class="coffee-images">
+      <img src="images/or12.jpg" class="main-img" alt="Coffee Beans" data-aos="fade-right" data-aos-delay="400">
+      <img src="images/or3.jpg" class="main-img" alt="Latte Art" data-aos="fade-left" data-aos-delay="600">
+    </div>
+
+    <!-- Right Text with Values -->
+    <div class="coffee-text" data-aos="fade-right" data-aos-delay="100">
+      <h1>What Makes <span style="color: #fff;"></span> <span style="font-family: 'Pacifico', cursive; color: #b9925d;">Us Unique</span></h1>
+      <hr class="decor-line" />
+      <h3>Brewing more than just coffee — we craft moments.</h3>
+      <p>
+        At Café Delight, we combine passion, precision, and purpose. From ethically sourced beans to handcrafted beverages, every detail matters.
+        Our team is devoted to delivering warmth, hospitality, and the finest flavors in every cup.
+      </p>
+      <button class="shop-btn">Discover More</button>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!-- About Section -->
+<section id="about" class="section parallax-fixed-section">
+  <div class="about-parallax-content" data-aos="fade-up">>
+    <h2>Our Story</h2>
+    <p class="since"><span></span> Brewing joy since 2010</p>
+    <p>
+      At Café Delight, coffee is more than just a drink — it's a ritual, a memory, a moment shared.
+      From the aroma of freshly ground beans to the final sip of a handcrafted latte, every detail matters.
+    </p>
+    <p>
+      We began in a small corner of New York, driven by a passion to bring people together — one cup at a time.
+      Whether you're chasing the morning sun or winding down after dusk, Café Delight is your warm embrace.
+    </p>
+    <blockquote>“We don’t just serve coffee — we serve connection, comfort, and a little magic.”</blockquote>
+    <p class="signature">— With love, The Café Delight Team</p>
+  </div>
+</section>
+
+<!-- Top Menu Section -->
+<section class="top-menu-section" id="top-menu">
+  <div class="container" data-aos="fade-up">
+    <h2 class="section-title">
+      <span>Top Selling</span> <span class="highlight">Menu Items</span>
+    </h2>
+    <p class="top-menu-subtitle">
+      We change our menu every week, but keep in those special items that our customers love and can't do without.
+    </p>
+
+    <div class="top-menu-grid" data-aos="fade-up" data-aos-delay="100">
+      <!-- Menu Cards -->
+      <div class="menu-card featured">
+        <div class="menu-badge">NEW!</div>
+        <img src="images/or1.jpg" alt="The Berliner" class="menu-img">
+        <div class="menu-content">
+          <h3 class="menu-name">The Berliner</h3>
+          <p class="menu-price">$220.00</p>
+          <p class="menu-desc">The Berliner is a sweet, jam-filled German doughnut.</p>
+          <a href="#" class="menu-link">View more</a>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <img src="images/or2.jpg" alt="Pesto" class="menu-img">
+        <div class="menu-content">
+          <h3 class="menu-name">Pesto</h3>
+          <p class="menu-price">$110.00</p>
+          <p class="menu-desc">Pesto is a fresh, herby Italian sauce</p>
+          <a href="#" class="menu-link">View more</a>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <img src="images/or3.jpg" alt="Pitante" class="menu-img">
+        <div class="menu-content">
+          <h3 class="menu-name">Pitante</h3>
+          <p class="menu-price">$100.00</p>
+          <p class="menu-desc">Pitante is a vibrant, Mediterranean-inspired wrap or bowl.</p>
+          <a href="#" class="menu-link">View more</a>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <img src="images/or4.jpg" alt="Laksa Curry" class="menu-img">
+        <div class="menu-content">
+          <h3 class="menu-name">Laksa Curry</h3>
+          <p class="menu-price">$200.00</p>
+          <p class="menu-desc">Laksa Curry is a spicy, coconut-based noodle soup from Southeast Asia.</p>
+          <a href="#" class="menu-link">View more</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="view-menu-btn-container" data-aos="fade-up" data-aos-delay="200">
+      <a href="#menu" class="view-menu-btn">View Menu</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- Redesigned & Optimized Menu Section -->
+<section id="menu" class="section menu" data-aos="fade-up" data-aos-once="true" data-aos-duration="400">
+  <h2 class="menu-heading">Our Menu</h2>
+
+  <div class="menu-list">
+    <div class="menu-row">
+      <div class="menu-item-flat">
+        <img src="images/or1.jpg" alt="Classic Latte" class="menu-thumb" loading="lazy" />
+        <div class="menu-info">
+          <h3>Classic Latte <span class="menu-price">₹275</span></h3>
+          <p><em>Smooth espresso blended with steamed milk.</em></p>
+        </div>
+      </div>
+      <div class="menu-item-flat">
+        <img src="images/or2.jpg" alt="Fresh Croissant" class="menu-thumb" loading="lazy" />
+        <div class="menu-info">
+          <h3>Fresh Croissant <span class="menu-price">₹325</span></h3>
+          <p><em>Warm flaky croissant served with honey butter.</em></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-row">
+      <div class="menu-item-flat">
+        <img src="images/or3.jpg" alt="Double Espresso" class="menu-thumb" loading="lazy" />
+        <div class="menu-info">
+          <h3>Double Espresso <span class="menu-price">₹375</span></h3>
+          <p><em>Bold espresso shot to energize your day.</em></p>
+        </div>
+      </div>
+      <div class="menu-item-flat">
+        <img src="images/or4.jpg" alt="Iced Mocha" class="menu-thumb" loading="lazy" />
+        <div class="menu-info">
+          <h3>Iced Mocha <span class="menu-price">₹445</span></h3>
+          <p><em>Chilled mocha topped with whipped cream.</em></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-row">
+      <div class="menu-item-flat">
+        <img src="images/or5.jpg" alt="Cappuccino" class="menu-thumb" loading="lazy" />
+        <div class="menu-info">
+          <h3>Cappuccino <span class="menu-price">₹295</span></h3>
+          <p><em>Espresso with steamed milk and foam.</em></p>
+        </div>
+      </div>
+      <div class="menu-item-flat">
+        <img src="images/or6.jpg" alt="Chocolate Muffin" class="menu-thumb" loading="lazy" />
+        <div class="menu-info">
+          <h3>Chocolate Muffin <span class="menu-price">₹225</span></h3>
+          <p><em>Rich chocolate muffin with gooey center.</em></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-row">
+      <div class="menu-item-flat">
+        <img src="images/or7.jpg" alt="Matcha Latte" class="menu-thumb" loading="lazy" />
+        <div class="menu-info">
+          <h3>Matcha Latte <span class="menu-price">₹305</span></h3>
+          <p><em>Organic matcha with frothy milk.</em></p>
+        </div>
+      </div>
+      <div class="menu-item-flat">
+        <img src="images/or8.jpg" alt="Macchiato" class="menu-thumb" loading="lazy" />
+        <div class="menu-info">
+          <h3>Macchiato <span class="menu-price">₹285</span></h3>
+          <p><em>Espresso topped with milk foam.</em></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-row">
+      <div class="menu-item-flat">
+        <img src="images/or9.jpg" alt="Vanilla Frappe" class="menu-thumb" loading="lazy" />
+        <div class="menu-info">
+          <h3>Vanilla Frappe <span class="menu-price">₹335</span></h3>
+          <p><em>Frozen coffee drink with vanilla essence.</em></p>
+        </div>
+      </div>
+      <div class="menu-item-flat">
+        <img src="images/or10.jpg" alt="Americano" class="menu-thumb" loading="lazy" />
+        <div class="menu-info">
+          <h3>Americano <span class="menu-price">₹255</span></h3>
+          <p><em>Espresso diluted with hot water.</em></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-row">
+      <div class="menu-item-flat">
+        <img src="images/or11.jpg" alt="Toasted Bagel" class="menu-thumb" loading="lazy" />
+        <div class="menu-info">
+          <h3>Toasted Bagel <span class="menu-price">₹185</span></h3>
+          <p><em>Crispy bagel served with cream cheese.</em></p>
+        </div>
+      </div>
+      <div class="menu-item-flat">
+        <img src="images/or12.jpg" alt="Breakfast Sandwich" class="menu-thumb" loading="lazy" />
+        <div class="menu-info">
+          <h3>Breakfast Sandwich <span class="menu-price">₹395</span></h3>
+          <p><em>Egg and cheese sandwich with toasted bread.</em></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Hero Banner Section -->
+<section class="hero-banner">
+  <div class="hero-overlay">
+    <div class="hero-content" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="200">
+      <h1 data-aos="fade-right" data-aos-delay="400">Transform Every Moment <br />into a Celebration!</h1>
+      <p data-aos="fade-left" data-aos-delay="600">
+        Welcome to <strong>Café Delight – The Casual Lounge</strong>! Dive into an exceptional dining and drinking experience where comfort meets sophistication. Whether you're enjoying a romantic evening, a relaxed gathering with friends, or a lively event, Cozy sets the perfect scene for unforgettable memories.
+      </p>
+      <a href="#contact" class="hero-btn" data-aos="zoom-in" data-aos-delay="800">Book a Table</a>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!-- Alternative Awards Section -->
+<section class="section awards-v2" id="awards">
+  <div class="container">
+    <h2 class="section-title"><span class="highlight">Proud</span> Moments</h2>
+
+    <p class="section-subtitle">Recognized for excellence in service, taste, and experience</p>
+
+    <div class="awards-cards">
+      <!-- Award 1 -->
+      <div class="award-box" data-aos="zoom-in" data-aos-delay="100">
+        <div class="award-icon">
+          🏅
+        </div>
+        <div class="award-info">
+          <h4>Zomato Gold Partner</h4>
+          <p class="year">Awarded in 2023 for consistent 5-star ratings.</p>
+        </div>
+      </div>
+
+      <!-- Award 2 -->
+      <div class="award-box" data-aos="zoom-in" data-aos-delay="200">
+        <div class="award-icon">
+          ⭐
+        </div>
+        <div class="award-info">
+          <h4>TripAdvisor Excellence</h4>
+          <p class="year">Rated Top Café for 3 consecutive years.</p>
+        </div>
+      </div>
+
+      <!-- Award 3 -->
+      <div class="award-box" data-aos="zoom-in" data-aos-delay="300">
+        <div class="award-icon">
+          🎖️
+        </div>
+        <div class="award-info">
+          <h4>Best Café Award</h4>
+          <p class="year">Winner at Local Food Fest – 3 years running.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- Professional Team Section -->
+<section class="section team-details" id="team">
+  <div class="container">
+    <h2 class="section-title">Meet the Team Behind <span class="highlight">Café Delight</span></h2>
+
+    <div class="team-detail-grid">
+      <!-- Member 1 -->
+      <div class="team-detail-card" data-aos="fade-right">
+        <img src="https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=600&q=80" alt="Ananya" class="team-img" />
+        <div class="team-info">
+          <h3>Ananya</h3>
+          <p class="role">Coffee Curator</p>
+          <p class="work">Currently perfecting a new cold brew recipe for summer.</p>
+        </div>
+      </div>
+
+      <!-- Member 2 -->
+      <div class="team-detail-card" data-aos="fade-up">
+        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80" alt="Ravi" class="team-img" />
+        <div class="team-info">
+          <h3>Ravi</h3>
+          <p class="role">Event Coordinator</p>
+          <p class="work">Planning our next live music night and art showcase.</p>
+        </div>
+      </div>
+
+      <!-- Member 3 -->
+      <div class="team-detail-card" data-aos="fade-left">
+        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80" alt="Meera" class="team-img" />
+        <div class="team-info">
+          <h3>Meera</h3>
+          <p class="role">Head Baker</p>
+          <p class="work">Experimenting with gluten-free pastry creations.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Achievements Section -->
+<section class="section achievements-horizontal" id="achievements">
+  <div class="achievements-heading" data-aos="fade-up">
+    <h2><span class="highlight">Our</span> Achievements</h2>
+    <p>Small wins, big impact — brewed over time</p>
+  </div>
+
+  <div class="achievements-flex">
+
+    <!-- Card 1 -->
+    <div class="achievement-box" data-aos="fade-up" data-aos-delay="100">
+      <div class="achieve-icon">👥</div>
+      <div>
+        <h3>5,000+</h3>
+        <p>Happy Customers</p>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="achievement-box" data-aos="fade-up" data-aos-delay="200">
+      <div class="achieve-icon">☕</div>
+      <div>
+        <h3>800+</h3>
+        <p>Cups Served Daily</p>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="achievement-box" data-aos="fade-up" data-aos-delay="300">
+      <div class="achieve-icon">🏅</div>
+      <div>
+        <h3>10+</h3>
+        <p>Awards Won</p>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="achievement-box" data-aos="fade-up" data-aos-delay="400">
+      <div class="achieve-icon">📆</div>
+      <div>
+        <h3>5+ Years</h3>
+        <p>Of Service</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+<!-- Events Section -->
+<section class="section events-section" id="events" data-aos="fade-up">
+  <h2 class="section-title">Upcoming <span class="highlight">Events</span></h2>
+  <div class="events-grid">
+    
+    <!-- Event Card 1 -->
+    <div class="event-card" data-aos="fade-up" data-aos-delay="100">
+      <h3>Live Jazz Night</h3>
+      <p class="event-date"> July 18, 2025</p>
+      <p class="event-desc">Enjoy a smooth evening of live jazz performances while sipping your favorite brews.</p>
+    </div>
+
+    <!-- Event Card 2 -->
+    <div class="event-card" data-aos="fade-up" data-aos-delay="200">
+      <h3>Barista Workshop</h3>
+      <p class="event-date"> July 22, 2025</p>
+      <p class="event-desc">Learn the secrets of espresso, latte art, and coffee brewing from our master baristas.</p>
+    </div>
+
+    <!-- Event Card 3 -->
+    <div class="event-card" data-aos="fade-up" data-aos-delay="300">
+      <h3>Latte Art Competition</h3>
+      <p class="event-date"> July 30, 2025</p>
+      <p class="event-desc">Showcase your latte art skills and win exciting café prizes. Open to all!</p>
+    </div>
+
+  </div>
+</section>
+
+ 
+
+  <!-- Testimonials Section -->
+<section class="testimonial-section" id="testimonials">
+  <div class="testimonial-header" data-aos="fade-up">
+    <h2>What Our <span class="highlight">Guests</span> Say</h2>
+    <p>Heartwarming words from our valued customers</p>
+  </div>
+
+  <div class="testimonial-cards">
+
+    <!-- Testimonial 1 -->
+    <div class="testimonial-box" data-aos="fade-right">
+      <div class="testimonial-icon">❝</div>
+      <p>"Absolutely love the cozy atmosphere and the smooth coffee. Always my go-to spot!"</p>
+      <div class="testimonial-profile">
+        <img src="https://i.pravatar.cc/80?img=5" alt="Customer">
+        <div class="profile-info">
+          <h4>Neha R.</h4>
+          <span class="stars">★★★★★</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonial 2 -->
+    <div class="testimonial-box" data-aos="fade-up">
+      <div class="testimonial-icon">❝</div>
+      <p>"The staff is super friendly, and the desserts are heavenly. Best café vibes!"</p>
+      <div class="testimonial-profile">
+        <img src="https://i.pravatar.cc/80?img=11" alt="Customer">
+        <div class="profile-info">
+          <h4>Karan D.</h4>
+          <span class="stars">★★★★★</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonial 3 -->
+    <div class="testimonial-box" data-aos="fade-left">
+      <div class="testimonial-icon">❝</div>
+      <p>"They truly serve coffee with passion. Loved every sip!"</p>
+      <div class="testimonial-profile">
+        <img src="https://i.pravatar.cc/80?img=12" alt="Customer">
+        <div class="profile-info">
+          <h4>Riya M.</h4>
+          <span class="stars">★★★★★</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- Footer Section -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-column">
+      <h3>Address</h3>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14016.719366962512!2d77.3692648!3d28.5832636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5b362081cbd%3A0x98164d9b1aefbd10!2sSpectrum%20Metro!5e0!3m2!1sen!2sin!4v1721100000000" width="250" height="150" style="border:0; border-radius:8px;" allowfullscreen="" loading="lazy"></iframe>
+      <p>4th floor,ernakulam<br>kerala,india</p>
+    </div>
+
+    <div class="footer-column">
+      <h3>Reservations</h3>
+      <p>+91 9999999999</p>
+      <p>info@cafedelight.in</p>
+    </div>
+
+    <div class="footer-column">
+      <h3>Opening Hours</h3>
+      <p>Mon - Sun: 12:00 pm - 1:00 am</p>
+      <h4>Connect with Us</h4>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-column" id="footer-column">
+      <h3>Keep in Touch</h3>
+      <p>Stay updated with our exclusive offers, special events, and new menu delights!</p>
+      <form class="newsletter">
+        <input type="email" placeholder="Email" required>
+        <button type="submit">Join</button>
+      </form>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="footer-bottom">
+    <p>&copy; 2024 cafe - The cafe delights. All rights reserved.</p>
+  </div>
+</footer>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
